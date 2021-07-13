@@ -1,0 +1,58 @@
+class Lista
+  attr_accessor :primero, :ultimo # crea get set de primero y ultimo de la lista
+
+  def initialize # define elemento vacio de lista enlazada
+    @primero = @ultimo = nil
+  end
+
+  def insertarValor(valor)
+    nodo = Nodo.new(valor) # creamos nodo nuvo
+    nodo.enlace= @primero  # unimos con el primero
+    @primero = nodo  # ahora el primero es el nuevo
+    @ultimo = nodo if @ultimo.nil? # y el último si era lista vacía
+
+  end
+
+  def insertarValorAlFinal(valor)
+    nodo = Nodo.new(valor)
+
+    @primero = nodo if @primero.nil?
+    @ultimo.enlace = nodo unless @ultimo.nil?
+
+    @ultimo = nodo
+  end
+
+  def verLista()
+    temp = @primero
+    while !( temp.nil?)
+      print temp.dato.to_s + ' '
+      temp = temp.enlace
+    end
+    puts " "
+  end 
+end
+
+class Nodo
+  attr_accessor :dato # crea get set de dato
+  def initialize(valor) # define un nodo
+    @dato = valor
+    @enlace = nil # llamado sig (de siguiente) en otras nomenclaturas
+  end
+
+  def enlace # getEnlace de forma manual
+    @enlace
+  end
+
+  def enlace=(valor) # setEnlace
+    @enlace = valor
+  end
+
+end
+print "\nElementos de la lista enlazada simple: \n";
+
+list = Lista.new()
+list.insertarValor(4)
+list.insertarValor(8)
+list.insertarValor(12)
+list.insertarValorAlFinal(0)
+list.verLista
