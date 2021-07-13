@@ -1,0 +1,23 @@
+class Cola
+
+    def solucion()
+
+        cola = []    #ARRAY
+
+        cola.push "Comida"      #ELEMENTOS DE LA COLA
+        cola.push "Bebidas"
+        cola.push "Globos"
+        cola.push "Pastel"
+        
+        cola.pop()
+        
+        print "\nElementos de la cola: \n";
+
+        while cola.size() > 0
+              print cola.shift(), " ";
+        end
+    end
+end
+
+obj = Cola.new
+obj.solucion()   
