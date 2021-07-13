@@ -1,0 +1,21 @@
+class Pilas
+    
+    def iniciar()
+        pila=[]         #ARRAY
+        
+        #Apilar
+        pila.push 8     #DATOS DE LA PILA
+        pila.push 12
+        pila.push 16
+        
+        pila.pop()  #SACA EL ULTIMO ELEMENTO DE LA PILA
+        
+        print "\nElementos de la pila:\n";
+        
+        puts pila.push   #MUESTRA LOS DATOS DE LA PILA
+    end 
+end
+
+obj = Pilas.new
+obj.iniciar()       
+    
